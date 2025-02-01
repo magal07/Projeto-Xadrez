@@ -1,5 +1,7 @@
 ﻿using tabuleiro;
 using System;
+using xadrez;
+
 namespace xadrez_console
 {
      class Tela
@@ -17,12 +19,21 @@ namespace xadrez_console
                     else
                     {
                         imprimirPeca(tab.peca(i, j));
+                        Console.Write(" ");
                         //Console.Write(tab.peca(i, j) + " "); // tab.peca = chamando peça no argumento tab // version initial
                     }
                 }
                 Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h");
+        }
+
+        public static PosicaoXadrez lerPosicaXadrez()
+        {
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1] + "");
+            return new PosicaoXadrez(coluna, linha);
         }
 
         public static void imprimirPeca(Peca peca)
@@ -35,7 +46,7 @@ namespace xadrez_console
             {
                 ConsoleColor aux = Console.ForegroundColor; // CRIANDO A VARIÁVEL E BUSCANDO COR PRIMÁRIA DO CONSOLE (CINZA)
                 Console.ForegroundColor = ConsoleColor.Yellow; // ALTERANDO A COR DA VARIÁVEL aux PARA YELLOW
-                Console.Write(peca); // chamando peça
+                Console.Write(peca ); // chamando peça
                 Console.ForegroundColor = aux;
             }
         }
