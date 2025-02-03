@@ -70,7 +70,7 @@ namespace xadrez {
             }
 
             // #jogadaespecial roque
-            if (qteMovimentos == 0 && !partida.xeque) {
+            if (qteMovimentos == 0 && !partida.xeque) { // se n tiver em cheque e o rei não mexeu ainda..!" 
                 // #jogadaespecial roque pequeno
                 Posicao posT1 = new Posicao(posicao.linha, posicao.coluna + 3);
                 if (testeTorreParaRoque(posT1)) {
@@ -91,8 +91,6 @@ namespace xadrez {
                     }
                 }
             }
-
-
             return mat;
         }
     }
